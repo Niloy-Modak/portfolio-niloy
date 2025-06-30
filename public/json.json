@@ -1,0 +1,44 @@
+[
+  {
+    "id": "p1",
+    "image": "https://i.ibb.co/7NXnbJGC/ss-1.png",
+    "title": "Ride Nest",
+    "description": "RideNest Website is an online platform where users can browse, book, and manage rental cars with ease. It features user login, real-time booking with date-based pricing, and special offers. Users must sign in to make or view bookings, and admins can manage car listings and reservations.",
+    "repoLink": "https://github.com/Niloy-Modak/Ride-nest-app",
+    "liveLink": "https://b11-assingment11.web.app/",
+    "tech": [
+      "React Js",
+      "Tailwind CSS",
+      "Node Js",
+      "MongoDB",
+      "Firebase Auth",
+      "Vercel"
+    ]
+  },
+  {
+    "id": "p2",
+    "image": "https://i.ibb.co/pBsHDHBy/food-ss-1.png",
+    "title": "Recipe Nest",
+    "description": "Recipe Nest is a website for food recipes where users can share their own recipes and explore those shared by others. Viewing recipes requires users to log in.",
+    "repoLink": "https://github.com/Niloy-Modak/recipe-nest-app",
+    "liveLink": "https://b11-assinment-10.web.app/",
+    "tech": [
+      "React Js",
+      "Tailwind CSS",
+      "Daisy Ui",
+      "Node Js",
+      "MongoDB",
+      "Firebase Auth",
+      "Vercel"
+    ]
+  },
+  {
+    "id": "p3",
+    "image": "https://i.ibb.co/SXf3ghRZ/pss-1.png",
+    "title": "Phudu",
+    "description": "Phudu is a user-friendly doctor booking platform that helps patients easily find and schedule appointments with certified healthcare professionals.It offers real-time availability, doctor profiles, and secure appointment management.Built with modern web technologies, Phudu ensures a seamless and efficient healthcare booking experience.",
+    "repoLink": "https://github.com/Niloy-Modak/phudu-web-app",
+    "liveLink": "https://phudu-website.netlify.app/",
+    "tech": ["React Js", "Tailwind CSS", "Daisy Ui"]
+  }
+]
