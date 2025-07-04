@@ -16,6 +16,11 @@ html, body {
   overflow-x: hidden;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgba(192, 192, 192, 0.541) !important;
+}
+
 :root {
   font-family:  "Inter", sans-serif;
 }

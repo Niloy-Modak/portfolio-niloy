@@ -1,11 +1,37 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// Image imports
+import imgRide1 from '../assets/ride-nest-web/ss-1.png';
+import imgRide2 from '../assets/ride-nest-web/ss-2.png';
+import imgRide3 from '../assets/ride-nest-web/ss-3.png';
+import imgRide4 from '../assets/ride-nest-web/ss-4.png';
+import imgRide5 from '../assets/ride-nest-web/ss-5.png';
+
+import imgRecipe1 from '../assets/food-nest-web/food-ss-1.png';
+import imgRecipe2 from '../assets/food-nest-web/food-ss-2.png';
+import imgRecipe3 from '../assets/food-nest-web/food-ss-3.png';
+import imgRecipe4 from '../assets/food-nest-web/food-ss-4.png';
+import imgRecipe5 from '../assets/food-nest-web/food-ss-5.png';
+
+import imgP1 from '../assets/phudu-web/pss-1.png';
+import imgP2 from '../assets/phudu-web/pss-2.png';
+import imgP3 from '../assets/phudu-web/pss-3.png';
+import imgP4 from '../assets/phudu-web/pss-4.png';
+import imgP5 from '../assets/phudu-web/pss-5.png';
 
 const projectData = [
   {
     id: "p1",
-    image: "https://i.ibb.co/7NXnbJGC/ss-1.png",
-    title: "Ride Nest",
+    images: [imgRide1, imgRide2, imgRide3, imgRide4, imgRide5],
+    title: "RideNest",
     description:
       "RideNest Website is an online platform where users can browse, book, and manage rental cars with ease. It features user login, real-time booking with date-based pricing, and special offers. Users must sign in to make or view bookings, and admins can manage car listings and reservations.",
     repoLink: "https://github.com/Niloy-Modak/Ride-nest-app",
@@ -14,7 +40,7 @@ const projectData = [
   },
   {
     id: "p2",
-    image: "https://i.ibb.co/pBsHDHBy/food-ss-1.png",
+    images: [imgRecipe1, imgRecipe2, imgRecipe3, imgRecipe4, imgRecipe5],
     title: "Recipe Nest",
     description:
       "Recipe Nest is a website for food recipes where users can share their own recipes and explore those shared by others. Viewing recipes requires users to log in.",
@@ -24,7 +50,7 @@ const projectData = [
   },
   {
     id: "p3",
-    image: "https://i.ibb.co/SXf3ghRZ/pss-1.png",
+    images: [imgP1, imgP2, imgP3, imgP4, imgP5],
     title: "Phudu",
     description:
       "Phudu is a user-friendly doctor booking platform that helps patients easily find and schedule appointments with certified healthcare professionals. It offers real-time availability, doctor profiles, and secure appointment management. Built with modern web technologies, Phudu ensures a seamless and efficient healthcare booking experience.",
@@ -36,29 +62,40 @@ const projectData = [
 
 const MyProjects = () => {
   return (
-    <div className="space-y-10 py-12 md:py-18 lg:py-22 ">
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-700 ">My Projects</h2>
+    <div className="space-y-10 py-12 md:py-18 lg:py-22">
+      <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">My Projects</h2>
 
       {projectData.map((project) => (
         <Fade key={project.id}>
-          <div
-            className="flex flex-col md:flex-row  items-center gap-6 border border-white/20 p-6 rounded-xl shadow-md bg-white/5"
-          >
-            {/* Left: Image */}
+          <div className="flex flex-col md:flex-row items-center gap-6 border border-white/20 p-6 rounded-xl shadow-md bg-white/5">
+            {/* Swiper Image Carousel */}
             <div className="md:w-1/2 w-full">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-[372px] object-cover rounded-lg border border-white/10 shadow-sm"
-              />
+              <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                navigation
+                loop={true}
+                slidesPerView={1}
+              >
+                {project.images.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={img}
+                      alt={`${project.title} Screenshot ${index + 1}`}
+                      loading="lazy"
+                      className="w-full h-[372px] object-cover rounded-lg border border-white/10 shadow-sm"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
 
-            {/* Right: Info */}
+            {/* Project Info */}
             <div className="md:w-1/2 w-full space-y-4">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
               <p className="text-sm text-gray-700">{project.description}</p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
                   <span
@@ -70,7 +107,6 @@ const MyProjects = () => {
                 ))}
               </div>
 
-              {/* Buttons */}
               <div className="flex gap-3">
                 <a
                   href={project.liveLink}
@@ -92,7 +128,6 @@ const MyProjects = () => {
             </div>
           </div>
         </Fade>
-
       ))}
     </div>
   );
