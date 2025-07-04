@@ -7,15 +7,11 @@
 @plugin "daisyui/theme" {
   name: "mytheme";
   default: true; /* set as default */
-  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
   color-scheme: light; /* color of browser-provided UI */
-
- 
   --color-primary: #2c6fb3;
   --color-secondary: #2C9EB6;
 
 }
-
 
 :root {
   font-family:  "Inter", sans-serif;

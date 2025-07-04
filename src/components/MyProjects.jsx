@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 const projectData = [
   {
@@ -39,57 +40,59 @@ const MyProjects = () => {
       <h2 className="text-3xl font-bold text-center mb-6 text-gray-700 ">My Projects</h2>
 
       {projectData.map((project) => (
-        <div
-          key={project.id}
-          className="flex flex-col md:flex-row  items-center gap-6 border border-white/20 p-6 rounded-xl shadow-md bg-white/5"
-        >
-          {/* Left: Image */}
-          <div className="md:w-1/2 w-full">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-[372px] object-cover rounded-lg border border-white/10 shadow-sm"
-            />
-          </div>
+        <Fade key={project.id}>
+          <div
+            className="flex flex-col md:flex-row  items-center gap-6 border border-white/20 p-6 rounded-xl shadow-md bg-white/5"
+          >
+            {/* Left: Image */}
+            <div className="md:w-1/2 w-full">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-[372px] object-cover rounded-lg border border-white/10 shadow-sm"
+              />
+            </div>
 
-          {/* Right: Info */}
-          <div className="md:w-1/2 w-full space-y-4">
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-sm text-gray-700">{project.description}</p>
+            {/* Right: Info */}
+            <div className="md:w-1/2 w-full space-y-4">
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <p className="text-sm text-gray-700">{project.description}</p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs bg-gray-600/30 text-white px-2 py-1 rounded-full backdrop-blur-md border border-white/30"
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs bg-gray-600/30 text-white px-2 py-1 rounded-full backdrop-blur-md border border-white/30"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-3">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
                 >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            {/* Buttons */}
-            <div className="flex gap-3">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
-              >
-                Live
-              </a>
-              <a
-                href={project.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-md"
-              >
-                GitHub
-              </a>
+                  Live
+                </a>
+                <a
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-md"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </Fade>
+
       ))}
     </div>
   );
