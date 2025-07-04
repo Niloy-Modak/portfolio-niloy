@@ -12,6 +12,9 @@
   --color-secondary: #2C9EB6;
 
 }
+html, body {
+  overflow-x: hidden;
+}
 
 :root {
   font-family:  "Inter", sans-serif;

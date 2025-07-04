@@ -16,7 +16,7 @@ const Banner = () => {
         }
     })
     return (
-        <div id="home" className='pt-14'>
+        <div id="home" className='pt-14 '>
             <div className='flex flex-wrap'>
 
                 <div className='w-full md:w-1/2 mb-12' >
@@ -86,7 +86,7 @@ const Banner = () => {
                         initial= {{x:100, opacity: 0}}
                         animate= {{x:0, opacity:1}}
                         transition={{duration:1, delay:1.2}}
-                        className='w-[362px] lg:w-[462px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md  p-2 ring-1 ring-inset ring-white/10' src={banner} alt="profile pic" />
+                        className='w-72 sm:w-72 md:w-80 lg:w-[462px] rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md  p-2 ring-1 ring-inset ring-white/10' src={banner} alt="profile pic" />
                     </div>
                 </div>
             </div>

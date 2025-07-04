@@ -16,15 +16,11 @@ const MainLayout = () => {
                     <Navbar />
                 </header>
 
-                <main className="pt-20 z-10 relative">
+                <main className="pt-20 z-10 relative ">
                     <Outlet />
                 </main>
                 <Footer/>
             </div>
-
-
-
-
 
         </>
     );
