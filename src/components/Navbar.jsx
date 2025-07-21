@@ -53,7 +53,7 @@ const Navbar = () => {
                 {/* Download CV + Mobile Menu */}
                 <div className='flex items-center gap-4'>
                     <div className='hidden md:block'>
-                        <a href='/cv-pdf.pdf' download >
+                        <a href='/niloy_modak_cv.pdf' download >
                             <ButtonIII label='Download CV' />
                         </a>
                     </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
                                 ))}
                                 <li className="mt-2">
                                     <div className='md:hidden'>
-                                        <a href="/cv-pdf.pdf" download>
+                                        <a href="/niloy_modak_cv.pdf" download>
                                             <ButtonIII label="Download CV" />
                                         </a>
                                     </div>

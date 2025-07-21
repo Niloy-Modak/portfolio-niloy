@@ -39,7 +39,7 @@ const ContactMe = () => {
 
                         {/* Socials */}
                         <div className="flex justify-center items-center gap-4 mt-6">
-                            <a href="www.linkedin.com/in/niloymodak" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/niloymodak" target="_blank" rel="noopener noreferrer">
                                 <FaLinkedin className="text-2xl text-gray-700 hover:text-sky-600 transition" />
                             </a>
                             <a href="https://github.com/Niloy-Modak" target="_blank" rel="noopener noreferrer">
