@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from 'react-icons/bs';
 import ButtonI from './ui/ButtonI';
 import {motion} from "framer-motion"
+import resume from "../assets/resume/Niloy_Modak_Resume.pdf"
 
 const Banner = () => {
     const container = (delay) =>({
@@ -71,8 +72,8 @@ const Banner = () => {
                         variants={container(1)}
                         initial= "hidden"
                         animate= "visible"
-                        href='/niloy_modak_cv.pdf' download>
-                            <ButtonI label='Download CV' />
+                        href={resume} download>
+                            <ButtonI label='Download Resume' />
                         </motion.a>
 
 

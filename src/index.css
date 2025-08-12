@@ -16,6 +16,10 @@ html, body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   color: rgba(192, 192, 192, 0.541) !important;

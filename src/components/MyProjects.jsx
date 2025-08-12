@@ -26,8 +26,11 @@ import imgP2 from '../assets/phudu-web/pss-2.png';
 import imgP3 from '../assets/phudu-web/pss-3.png';
 import imgP4 from '../assets/phudu-web/pss-4.png';
 import imgP5 from '../assets/phudu-web/pss-5.png';
+import { Link } from 'react-router';
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiFirebase, SiVercel } from "react-icons/si";
 
-const projectData = [
+export const projectData = [
   {
     id: "p1",
     images: [imgRide1, imgRide2, imgRide3, imgRide4, imgRide5],
@@ -37,6 +40,16 @@ const projectData = [
     repoLink: "https://github.com/Niloy-Modak/Ride-nest-app",
     liveLink: "https://b11-assingment11.web.app/",
     tech: ["React Js", "Tailwind CSS", "Node Js", "MongoDB", "Firebase Auth", "Vercel"],
+    futures: ["Secure user login and authentication", "Date-based car availability and booking system", "You can add your own car for rent and also book a car", "Fully responsive design for all devices"],
+
+    techIcon: [
+      { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500 text-2xl" /> },
+      { name: "Node Js", icon: <FaNodeJs className="text-green-500 text-2xl" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600 text-2xl" /> },
+      { name: "Firebase Auth", icon: <SiFirebase className="text-yellow-400 text-2xl" /> },
+      { name: "Vercel", icon: <SiVercel className="text-black dark:text-white text-2xl" /> },
+    ]
   },
   {
     id: "p2",
@@ -47,6 +60,15 @@ const projectData = [
     repoLink: "https://github.com/Niloy-Modak/recipe-nest-app",
     liveLink: "https://b11-assinment-10.web.app/",
     tech: ["React Js", "Tailwind CSS", "Daisy Ui", "Node Js", "MongoDB", "Firebase Auth", "Vercel"],
+    futures: ["Secure user login and authentication", "Full CRUD: Create, Read, Update, Delete recipes", "User dashboard to manage personal recipes", "Fully responsive design for all devices"],
+    techIcon: [
+      { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500 text-2xl" /> },
+      { name: "Node Js", icon: <FaNodeJs className="text-green-500 text-2xl" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600 text-2xl" /> },
+      { name: "Firebase Auth", icon: <SiFirebase className="text-yellow-400 text-2xl" /> },
+      { name: "Vercel", icon: <SiVercel className="text-black dark:text-white text-2xl" /> },
+    ]
   },
   {
     id: "p3",
@@ -57,7 +79,14 @@ const projectData = [
     repoLink: "https://github.com/Niloy-Modak/phudu-web-app",
     liveLink: "https://phudu-website.netlify.app/",
     tech: ["React Js", "Tailwind CSS", "Daisy Ui"],
+    futures: ["Users can book appointments with doctors and save the data locally.", " Bookings remain available even after page refresh using local storage.", "Interactive chart shows doctor fee comparisons to aid user decisions.", "Built fully with React.js and Tailwind CSS, with no backend or database."],
+    techIcon: [
+      { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500 text-2xl" /> },
+      { name: "Node Js", icon: <FaNodeJs className="text-green-500 text-2xl" /> },
+    ]
   },
+  
 ];
 
 const MyProjects = () => {
@@ -124,6 +153,9 @@ const MyProjects = () => {
                 >
                   GitHub
                 </a>
+                <Link to={`/project/${project.id}`} className='btn bg-primary/50 hover:bg-primary/70 text-gray-50 border-none'>
+                  View details
+                </Link>
               </div>
             </div>
           </div>

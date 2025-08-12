@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
 import Loading from "../components/ui/Loading";
+import ProjectDetails from "../components/ProjectDetails";
+
 
 const Router = createBrowserRouter([
     {
@@ -14,7 +16,11 @@ const Router = createBrowserRouter([
                 path: '/',
                 Component: Home,  
                 HydrateFallback: Loading,
-                // loader: ()=> fetch('../DoctorsData.json')
+            },
+            {
+                path: '/project/:id',
+                Component: ProjectDetails,  
+                HydrateFallback: Loading,
             }
         ]
     }

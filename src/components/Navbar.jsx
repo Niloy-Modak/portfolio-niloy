@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from "react-icons/fa";
 import logo from "../assets/NM-logo.png";
-import { Link } from 'react-scroll';
 import ButtonIII from './ui/ButtonIII';
+import { Link } from 'react-router';
 
 
 const Navbar = () => {
@@ -21,6 +21,13 @@ const Navbar = () => {
 
     const handleLinkClick = () => setMenuOpen(false);
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        const offset = 80; // height of fixed navbar
+        const top = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+    };
+
     return (
         <nav className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-md">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3 md:py-4">
@@ -34,21 +41,26 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <ul className='hidden lg:flex items-center gap-10 font-semibold text-base'>
-                    <li className='p-2 hover:bg-secondary hover:text-white text-gray-700 rounded-md transition-all cursor-pointer'>
-                        <Link to="home" smooth={true} duration={500} offset={-80}>Home</Link>
+                    <li>
+                        <Link to={"/"} onClick={() => scrollToSection("home")} className='p-2 hover:bg-secondary hover:text-white text-gray-700 rounded-md transition-all cursor-pointer'>
+                            Home
+                        </Link>
+
                     </li>
                     {[
                         { label: 'About Me', to: 'about' },
                         { label: 'Skills', to: 'skills' },
                         { label: 'Contact me', to: 'contact' },
                     ].map((item) => (
-                        <li key={item.to} className='p-2 hover:bg-secondary text-gray-700 hover:text-white rounded-md transition-all cursor-pointer'>
-                            <Link to={item.to} smooth={true} duration={500} offset={-80}>
-                                {item.label}
-                            </Link>
+                        <li
+                            key={item.to}
+
+                        >
+                            <a href={`#${item.to}`} className='p-2 hover:bg-secondary text-gray-700 hover:text-white rounded-md transition-all cursor-pointer'>{item.label}</a>
                         </li>
                     ))}
                 </ul>
+
 
                 {/* Download CV + Mobile Menu */}
                 <div className='flex items-center gap-4'>
@@ -77,8 +89,14 @@ const Navbar = () => {
                              ${menuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}`}
                         >
                             <ul className="flex flex-col items-center text-lg font-semibold py-4 text-gray-600 md:text-gray-50">
+                                <Link to={"/"} onClick={() => scrollToSection("home")} className="w-full text-center py-3 px-4 text-sky-700 text-shadow-xs
+                 hover:bg-sky-600 hover:text-white transition-all cursor-pointer">
+                                    Home
+                                </Link>
+                                <li>
+                                    
+                                </li>
                                 {[
-                                    { label: 'Home', to: 'home' },
                                     { label: 'About Me', to: 'about' },
                                     { label: 'Skills', to: 'skills' },
                                     { label: 'Contact me', to: 'contact' },
@@ -86,12 +104,12 @@ const Navbar = () => {
                                     <li
                                         key={item.to}
                                         onClick={handleLinkClick}
-                                        className="w-full text-center py-3 px-4 text-sky-700  text-shadow-xs
-                                         hover:bg-sky-600 hover:text-white transition-all cursor-pointer"
+                                        className="w-full text-center py-3 px-4 text-sky-700 text-shadow-xs
+                 hover:bg-sky-600 hover:text-white transition-all cursor-pointer"
                                     >
-                                        <Link to={item.to} className='w-full' smooth={true} duration={500} offset={-80}>
+                                        <a href={`#${item.to}`} className="w-full block">
                                             {item.label}
-                                        </Link>
+                                        </a>
                                     </li>
                                 ))}
                                 <li className="mt-2">
@@ -100,9 +118,9 @@ const Navbar = () => {
                                             <ButtonIII label="Download CV" />
                                         </a>
                                     </div>
-
                                 </li>
                             </ul>
+
                         </div>
 
 
