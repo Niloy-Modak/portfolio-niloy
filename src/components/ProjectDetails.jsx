@@ -8,9 +8,9 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const project = projectData.find((p) => p.id === id);
   const [mainImage, setMainImage] = useState(project?.images[0]);
-  
+
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, [])
 
   return (
@@ -67,6 +67,36 @@ const ProjectDetails = () => {
           ))}
         </div>
 
+        {/* Features list */}
+        <div className="mt-6  sm:mt-8 space-y-2 sm:space-y-3">
+          <h1 className="text-xl font-bold ">Key Features:</h1>
+
+          <ul className=" ">
+            {project.futures.map((future, index) => (
+              <li key={index} className="flex items-center gap-2 text-sm sm:text-base">
+                <FaCheckCircle className="text-green-500" />
+                {future}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* difficulty*/}
+        <div className="mt-6  sm:mt-8 space-y-2 sm:space-y-3">
+          <h1 className="text-xl font-bold ">Difficulty i face in this project:</h1>
+          <p>
+            {project.difficulty}
+          </p>
+        </div>
+        
+        {/* future plans*/}
+        <div className="mt-6  sm:mt-8 space-y-2 sm:space-y-3">
+          <h1 className="text-xl font-bold ">Future plans in this project:</h1>
+          <p>
+            {project.plan}
+          </p>
+        </div>
+
         {/* Buttons */}
         <div className="flex flex-wrap gap-3 mt-6">
           <a
@@ -86,21 +116,6 @@ const ProjectDetails = () => {
             <FaGithub /> GitHub Repo
           </a>
         </div>
-
-        {/* Features list */}
-        <div className="mt-6  sm:mt-8 space-y-2 sm:space-y-3">
-          <h1 className="text-xl font-bold ">Key Features:</h1>
-
-          <ul className=" ">
-            {project.futures.map((future, index) => (
-              <li key={index} className="flex items-center gap-2 text-sm sm:text-base">
-                <FaCheckCircle className="text-green-500" />
-                {future}
-              </li>
-            ))}
-          </ul>
-        </div>
-
       </div>
     </div>
 

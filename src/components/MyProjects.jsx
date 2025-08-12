@@ -41,6 +41,8 @@ export const projectData = [
     liveLink: "https://b11-assingment11.web.app/",
     tech: ["React Js", "Tailwind CSS", "Node Js", "MongoDB", "Firebase Auth", "Vercel"],
     futures: ["Secure user login and authentication", "Date-based car availability and booking system", "You can add your own car for rent and also book a car", "Fully responsive design for all devices"],
+    plan: "Future updates may include AI-based ride suggestions and advanced analytics for drivers and users.",
+    difficulty: "It was my first time working on this kind of project, so I faced difficulties with date-wise booking and updating. However, I figured it out and integrated it perfectly.",
 
     techIcon: [
       { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
@@ -59,8 +61,10 @@ export const projectData = [
       "Recipe Nest is a website for food recipes where users can share their own recipes and explore those shared by others. Viewing recipes requires users to log in.",
     repoLink: "https://github.com/Niloy-Modak/recipe-nest-app",
     liveLink: "https://b11-assinment-10.web.app/",
+    difficulty: "When I developed the CRUD operation web app, it was new for me. I had difficulty figuring out how to add Gmail with the recipe in the database and how to make each user have their own data and recipes. But with my mentor’s help, I fixed it.",
     tech: ["React Js", "Tailwind CSS", "Daisy Ui", "Node Js", "MongoDB", "Firebase Auth", "Vercel"],
     futures: ["Secure user login and authentication", "Full CRUD: Create, Read, Update, Delete recipes", "User dashboard to manage personal recipes", "Fully responsive design for all devices"],
+    plan: "For Recipe Nest, I will add token verification next time and also include some new features.",
     techIcon: [
       { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500 text-2xl" /> },
@@ -84,7 +88,9 @@ export const projectData = [
       { name: "React Js", icon: <FaReact className="text-sky-400 text-2xl" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500 text-2xl" /> },
       { name: "Node Js", icon: <FaNodeJs className="text-green-500 text-2xl" /> },
-    ]
+    ],
+    difficulty: "In that project, multiple routes were new for me. I faced some problems at first, but I managed to do it perfectly. I also had some issues with graphs for the first time, but I figured those out as well.",
+    plan: "Next time, I will add Firebase authentication, token verification, a backend server, and some AI features.",
   },
   
 ];
